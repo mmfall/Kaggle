@@ -41,4 +41,5 @@ y_pred=clf.predict(X_testKaggle)
 result['Survived']=y_pred
 
 np.savetxt("/home/reddowan/Documents/Kaggle Titanic/resultAdaBoost.csv",result,delimiter=",",fmt='%3d')
-![alt text](/tree.png "Visualization of the tree decision boundaries")
+
+""" See Visualization of the tree decision boundaries in the file tree.png in this repository """
