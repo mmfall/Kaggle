@@ -33,13 +33,28 @@ y_pred=clf.predict(X_test)
 print (accuracy_score(y_test,y_pred))
 
 clf.fit(X,np.ravel(y))
-X_testKaggle=pd.DataFrame(testKaggle, columns=['Pclass','Sex','SibSp','Parch'])
+X_testKaggle=pd.DataFrame(testKaggle, columns=['Pclass','Sex','SibSp','Parch','Pclass2','Pclass3'])
 X_testKaggle['Sex'].replace(to_replace="male",value=0,inplace=1)
 X_testKaggle['Sex'].replace(to_replace="female",value=1,inplace=1)
+X_testKaggle['Pclass2']=np.zeros(418) """taille des zeros à remplir"""
+X_testKaggle['Pclass3']=np.zeros(418)
+for index, row in X_testKaggle.iterrows():
+ if X_testKaggle.loc[index,'Pclass']==3:
+  X_testKaggle.loc[index,'Pclass3']=1
+  X_testKaggle.loc[index,'Pclass']=0
+ if X_testKaggle.loc[index,'Pclass']==2:
+  X_testKaggle.loc[index,'Pclass2']=1
+  X_testKaggle.loc[index,'Pclass']=0
 result=pd.DataFrame(testKaggle, columns=['PassengerId','Survived'])
 y_pred=clf.predict(X_testKaggle)
 result['Survived']=y_pred
 
 np.savetxt("/home/reddowan/Documents/Kaggle Titanic/resultAdaBoost.csv",result,delimiter=",",fmt='%3d')
+
+tree.export_graphviz(clf, out_file=tree,  
+                         feature_names=['Pclass','Sex','SibSp','Parch','Pclass2','Pclass3'],  
+                         class_names=['Death','Alive'],  
+                         filled=True, rounded=True,  
+                         special_characters=True)  
 
 """ See Visualization of the tree decision boundaries in the file tree.png in this repository """
