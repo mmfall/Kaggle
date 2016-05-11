@@ -1,4 +1,5 @@
 # Kaggle data science competitions
+----------------------------------
 This repository contain my competition algorythm on Kaggle
 
 You'll find in this repository the following competition algorithm :    
