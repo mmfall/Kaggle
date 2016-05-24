@@ -7,3 +7,4 @@ You'll find in this repository the following competition algorithm :
 ![Alt text](tree.png)
 [- Ipad sales prediction on eBay with Linear Discriminant Aanalysis (ranking : 1328/1885 on Kaggle)](/KaggleiPad.py) see details on [Kaggle eBay Ipads](https://inclass.kaggle.com/c/15-071x-the-analytics-edge-summer-2015)    
 [- Happiness most influential factors (ranking : TBD/1685 on Kaggle)](/KaggleHappiness.py) see details on [Kaggle Happiness poll](https://www.kaggle.com/c/the-analytics-edge-mit-15-071x)
+[- Hotel booking prediction on Expedia.com (ranking : TBD/TBD on Kaggle)](/KaggleExpedia.py) see details on [Kaggle Expedia Hotel recommendations](https://www.kaggle.com/c/expedia-hotel-recommendations)
